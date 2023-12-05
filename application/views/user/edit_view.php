@@ -71,17 +71,17 @@
                                     <input type="email"  value="<?= $user->email;?>" readonly class="form-control" name="email" required="required" placeholder="Contoh : dindacantik1@gmail.com">
                                 </div>
                                 <div class="form-group">
+                                    <label>Alamat</label>
+                                    <textarea class="form-control" name="alamat"  required="required"><?= $user->alamat;?></textarea>
+                                    <input type="hidden" class="form-control" value="<?= $user->id_login;?>" name="id_login">
+                                    <input type="hidden" class="form-control" value="<?= $user->foto;?>" name="foto">
+                                </div>
+                                <div class="form-group">
                                     <label>Pas Foto</label>
                                     <input type="file" accept="image/*" name="gambar">
                                     
                                     <br/>
                                     <img src="<?= base_url('assets_style/image/'.$user->foto);?>" class="img-responsive" alt="#">
-                                </div>
-                                <div class="form-group">
-                                    <label>Alamat</label>
-                                    <textarea class="form-control" name="alamat"  required="required"><?= $user->alamat;?></textarea>
-                                    <input type="hidden" class="form-control" value="<?= $user->id_login;?>" name="id_login">
-                                    <input type="hidden" class="form-control" value="<?= $user->foto;?>" name="foto">
                                 </div>
                             </div>
                         </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jun 2022 pada 03.57
+-- Waktu pembuatan: 05 Des 2023 pada 05.53
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 8.0.0
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `perpus_si2`
+-- Database: `perpustakaan_ppl`
 --
 
 -- --------------------------------------------------------
@@ -39,11 +39,8 @@ CREATE TABLE `tbl_biaya_denda` (
 --
 
 INSERT INTO `tbl_biaya_denda` (`id_biaya_denda`, `harga_denda`, `stat`, `tgl_tetap`) VALUES
-(1, '10000', 'Aktif', '2022-05-25'),
-(2, '30000', 'Aktif', '2022-05-31'),
-(3, '15000', 'Aktif', '2022-05-30'),
-(4, '10000', 'Tidak Aktif', '2020-10-10'),
-(13, '', 'Tidak Aktif', '2022-06-02');
+(14, '2000', 'Tidak Aktif', '2023-11-30'),
+(16, '5000', 'Aktif', '2023-12-03');
 
 -- --------------------------------------------------------
 
@@ -71,11 +68,8 @@ CREATE TABLE `tbl_buku` (
 --
 
 INSERT INTO `tbl_buku` (`id_buku`, `buku_id`, `sampul`, `isbn`, `lampiran`, `title`, `penerbit`, `pengarang`, `thn_buku`, `isi`, `jml`, `tgl_masuk`) VALUES
-(1, 'BK001', '0', '978-979-294-344-3', '0', 'Kolaborasi PHP 5 dan Mysql untuk pengembangan website + cd', 'Andi Offset', 'Eko Priyo Utomo', '2014', '', 8, '2022-05-31 19:39:19'),
-(2, 'BK002', '0', '978-979-346-559-X', '0', 'Ilmu Dakwah', 'Kencana', 'Dr. Moh. Ali Aziz, M.AG', '2016', '', 1, '2022-05-31 19:41:03'),
-(11, 'BK003', 'd43fbfc43d169e225b165099a910f1bc.jpg', '978-623-02-0508-8', NULL, 'Data Mining Untuk Perguruan Tinggi', 'STMIK BUDI DARMA', 'Efori Buulolo, S.Kom., M.Kom', '2020', '', 1, '2022-06-01 19:05:27'),
-(13, 'BK0012', '511ae787bfd4a2d191a16049df4ab24b.jpg', '978-979-16776-7-7', NULL, 'Pendidikan pasca konflik: pendidikan multikultural berbasis konseling budaya masyarakat Maluku Utara', 'LKis Yogyakarta', 'M. Tahir Sapsuha', '2013', '', 12, '2022-06-01 19:15:54'),
-(14, 'BK0014', '3a86d100301282d331dbb8f377a5a499.jpg', '978-979-769-297-1', NULL, 'Ilmu Negara', 'Rajawali', 'Prof. Dr. Ni\'Matul Huda, S.H., M.Hum.', '2010', '', 8, '2022-06-01 19:18:29');
+(15, 'BK0015', 'dd97441569588ff5b3cde165496aa011.jpg', '978-623-7498-59-9', NULL, 'Machine Learning (Konsep dan Implementasi)', 'Penerbit Gaya Media', 'Dr. Yaya Heryadi, Teguh Wahyono, M. Cs', '2020', '', 1, '2023-11-28 12:11:04'),
+(17, 'BK0016', 'a7aebe8fb14fa07ddb09acb1b81f144e.jpg', '978-979-769-297-1', NULL, 'Ilmu Negara', 'Rajawali', 'Ni\'Matul Huda', '2019', '', 2, '2023-11-28 12:13:32');
 
 -- --------------------------------------------------------
 
@@ -96,10 +90,8 @@ CREATE TABLE `tbl_denda` (
 --
 
 INSERT INTO `tbl_denda` (`id_denda`, `pinjam_id`, `denda`, `lama_waktu`, `tgl_denda`) VALUES
-(1, 'PJ001', '25000', 3, '2022-05-02\r\n'),
-(3, 'PJ001', '0', 0, '2020-05-20'),
-(5, 'PJ009', '0', 0, '2020-05-20'),
-(6, 'PJ004', '0', 0, '2022-06-02');
+(7, 'PJ001', '0', 0, '2023-11-23'),
+(8, 'PJ0017', '20000', 2, '2023-12-03');
 
 -- --------------------------------------------------------
 
@@ -147,10 +139,10 @@ CREATE TABLE `tbl_login` (
 --
 
 INSERT INTO `tbl_login` (`id_login`, `anggota_id`, `user`, `pass`, `level`, `nama`, `tempat_lahir`, `tgl_lahir`, `jenkel`, `alamat`, `telepon`, `email`, `tgl_bergabung`, `foto`) VALUES
-(4, 'AG002', 'dindaaja', '827ccb0eea8a706c4c34a16891f84e7b', 'Anggota', 'Dindaps', 'Medan', '2002-08-17', 'Perempuan', 'Medan', '08123456888', 'dinda123@gmail.com', '2022-05-30', 'user_1653978214.jpg'),
+(4, 'AG002', 'dindaaja', '827ccb0eea8a706c4c34a16891f84e7b', 'Anggota', 'Dindaps', 'Medan', '2002-08-17', 'Perempuan', 'Medann', '08123456888', 'dinda123@gmail.com', '2022-05-30', 'user_1653978214.jpg'),
 (6, 'AG006', 'dindacantik', '827ccb0eea8a706c4c34a16891f84e7b', 'Petugas', 'Dinda Cantik', 'Medan', '2002-08-17', 'Perempuan', 'Di Medan', '08111112345', 'dindacantik123@gmail.com', '2022-05-31', 'user_1653980340.jpg'),
-(7, 'AG007', 'tridindaps', '827ccb0eea8a706c4c34a16891f84e7b', 'Anggota', 'Tridinda Permatasari', 'Medan', '2002-08-17', 'Perempuan', 'Medan Polonia', '088190999099', 'tridindapermatasari6@gmail.com', '2022-06-01', 'user_1654091527.jpg'),
-(8, 'AG008', 'zidaneee', '827ccb0eea8a706c4c34a16891f84e7b', 'Anggota', 'Zidane Rizki', 'Aceh', '2000-02-20', 'Laki-Laki', 'Jalan Perjuangan Gang Effort', '088298782122', 'zidanerizki@gmail.com', '2022-06-02', 'user_1654172450.png');
+(10, 'AG007', 'sitij', '827ccb0eea8a706c4c34a16891f84e7b', 'Petugas', 'Siti Jubaidah', 'Sidikalang', '2002-01-01', 'Perempuan', 'Medann', '08123456789', 'sitij@gmail.com', '2023-11-28', 'user_1701147850.png'),
+(11, 'AG0011', 'putriindah', '827ccb0eea8a706c4c34a16891f84e7b', 'Anggota', 'Putri Indah', 'jakarta', '2000-01-21', 'Perempuan', 'Jalan Perjuangan no 1', '081122334455', 'putriindah@gmail.com', '2023-11-28', 'user_1701147980.png');
 
 -- --------------------------------------------------------
 
@@ -175,12 +167,10 @@ CREATE TABLE `tbl_pinjam` (
 --
 
 INSERT INTO `tbl_pinjam` (`id_pinjam`, `pinjam_id`, `anggota_id`, `buku_id`, `status`, `tgl_pinjam`, `lama_pinjam`, `tgl_balik`, `tgl_kembali`) VALUES
-(1, 'PJ001', 'AG002', 'BK008', 'Di Kembalikan', '2022-05-19', 1, '2022-05-20', '2022-05-20'),
-(2, 'PJ002', 'AG002', 'BK002', 'Dipinjam', '2022-05-31', 3, '2022-06-03', '0'),
-(4, 'PJ004', 'AG002', 'BK001', 'Di Kembalikan', '2022-05-31', 30, '2022-06-30', '2022-06-02'),
-(10, 'PJ009', 'AG002', 'BK008', 'Di Kembalikan', '2022-05-20', 1, '2022-05-21', '2022-05-20'),
-(13, 'PJ0011', 'AG007', 'BK0014', 'Dipinjam', '2022-06-02', 22, '2022-06-24', '0'),
-(14, 'PJ0014', 'AG008', 'BK001', 'Dipinjam', '2022-06-02', 1, '2022-06-03', '0');
+(15, 'PJ001', 'AG002', 'BK001', 'Di Kembalikan', '2023-11-23', 1, '2023-11-24', '2023-11-23'),
+(16, 'PJ001', 'AG002', 'BK001', 'Di Kembalikan', '2023-11-23', 1, '2023-11-24', '2023-11-23'),
+(17, 'PJ0017', 'AG002', 'BK0015', 'Di Kembalikan', '2023-11-30', 1, '2023-12-01', '2023-12-03'),
+(18, 'PJ0017', 'AG002', 'BK0016', 'Di Kembalikan', '2023-11-30', 1, '2023-12-01', '2023-12-03');
 
 -- --------------------------------------------------------
 
@@ -254,19 +244,19 @@ ALTER TABLE `tbl_rak`
 -- AUTO_INCREMENT untuk tabel `tbl_biaya_denda`
 --
 ALTER TABLE `tbl_biaya_denda`
-  MODIFY `id_biaya_denda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_biaya_denda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_buku`
 --
 ALTER TABLE `tbl_buku`
-  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_denda`
 --
 ALTER TABLE `tbl_denda`
-  MODIFY `id_denda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_denda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_kategori`
@@ -278,13 +268,13 @@ ALTER TABLE `tbl_kategori`
 -- AUTO_INCREMENT untuk tabel `tbl_login`
 --
 ALTER TABLE `tbl_login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_pinjam`
 --
 ALTER TABLE `tbl_pinjam`
-  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_rak`

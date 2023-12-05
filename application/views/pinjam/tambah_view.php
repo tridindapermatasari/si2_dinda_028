@@ -146,8 +146,7 @@
 				<button class="btn btn-primary" id="Select_File2" data_id="<?= $isi['buku_id'];?>">
 					<i class="fa fa-check"> </i> Pilih
 				</button>
-				<a href="<?= base_url('data/bukudetail/'.$isi['id_buku']);?>" target="_blank">
-					<button class="btn btn-success"><i class="fa fa-sign-in"></i> Detail</button></a>
+	
 				</td>
 			</tr>
 		<?php $no++;}?>

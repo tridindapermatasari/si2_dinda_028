@@ -80,14 +80,11 @@
 									<td <?php if($this->session->userdata('level') == 'Petugas'){?>style="width:17%;"<?php }?>>
 								
 									<?php if($this->session->userdata('level') == 'Petugas'){?>
-									<a href="<?= base_url('data/bukuedit/'.$isi['id_buku']);?>"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a>
-									<a href="<?= base_url('data/bukudetail/'.$isi['id_buku']);?>">
-									<button class="btn btn-primary"><i class="fa fa-sign-in"></i> Detail</button></a>
+
                                     <a href="<?= base_url('data/prosesbuku?buku_id='.$isi['id_buku']);?>" onclick="return confirm('Anda yakin Buku ini akan dihapus ?');">
 									<button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
 									<?php }else{?>
-										<a href="<?= base_url('data/bukudetail/'.$isi['id_buku']);?>">
-										<button class="btn btn-primary"><i class="fa fa-sign-in"></i> Detail</button></a>
+						
 									<?php }?>
                                 </td>
                             </tr>
